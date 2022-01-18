@@ -95,7 +95,7 @@ var Lilac;
                 /**
                  * Initialize Google Maps and populate with concerts locations
                  */
-                $tis.googleMap();
+                // $tis.googleMap();
 
                 /**
                  * Get latest tweets
@@ -125,11 +125,11 @@ var Lilac;
                 /**
                  * Create Countdown
                  */
-                $tis.countdown();
+                // $tis.countdown();
 
-                 /**
-                 * Initiate Parallax
-                 */
+                /**
+                * Initiate Parallax
+                */
                 $tis.parallaxItems();
 
                 /**
@@ -204,8 +204,8 @@ var Lilac;
                         window.open(navActive.attr('href'), "_self");
                     }
                 });
-                
-                $('a[href="#"]').click(function(e) {
+
+                $('a[href="#"]').click(function (e) {
                     return false;
                 });
 
@@ -344,10 +344,10 @@ var Lilac;
                 var $tis = this;
 
                 if ($tis.hero100PercentHeight) {
-                    $("#home").css({minHeight: $(window).innerHeight() + 'px'});
+                    $("#home").css({ minHeight: $(window).innerHeight() + 'px' });
 
                     $(window).resize(function () {
-                        $("#home").css({minHeight: $(window).innerHeight() + 'px'});
+                        $("#home").css({ minHeight: $(window).innerHeight() + 'px' });
                     });
                 }
             },
@@ -358,7 +358,7 @@ var Lilac;
                     $("#freewall .item").each(function () {
                         var $item = $(this);
                         $item.width(Math.floor(260 + 200 * Math.random()));
-                        $item.css({'background-image': 'url(' + $('>img', $item).attr('src') + ')'});
+                        $item.css({ 'background-image': 'url(' + $('>img', $item).attr('src') + ')' });
                         $('>img', $item).remove();
                     });
 
@@ -405,74 +405,74 @@ var Lilac;
                     styles = [
                         {
                             stylers: [
-                                {hue: map_color},
-                                {saturation: -75},
-                                {lightness: 5}
+                                { hue: map_color },
+                                { saturation: -75 },
+                                { lightness: 5 }
                             ]
                         },
                         {
                             featureType: "administrative",
                             elementType: "labels.text.fill",
                             stylers: [
-                                {saturation: 20},
-                                {lightness: -70}
+                                { saturation: 20 },
+                                { lightness: -70 }
                             ]
                         },
                         {
                             featureType: "water",
                             elementType: "geometry",
                             stylers: [
-                                {saturation: -50},
-                                {lightness: 40}
+                                { saturation: -50 },
+                                { lightness: 40 }
                             ]
                         },
                         {
                             featureType: "road",
                             elementType: "geometry",
                             stylers: [
-                                {hue: map_color},
-                                {saturation: -100},
-                                {lightness: 0}
+                                { hue: map_color },
+                                { saturation: -100 },
+                                { lightness: 0 }
                             ]
                         },
                         {
                             featureType: "road.highway",
                             elementType: "geometry",
                             stylers: [
-                                {hue: map_color},
-                                {saturation: 5},
-                                {lightness: 5}
+                                { hue: map_color },
+                                { saturation: 5 },
+                                { lightness: 5 }
                             ]
                         },
                         {
                             featureType: "road",
                             elementType: "geometry.stroke",
                             stylers: [
-                                {saturation: 10},
-                                {lightness: 0}
+                                { saturation: 10 },
+                                { lightness: 0 }
                             ]
                         },
                         {
                             featureType: "road.highway",
                             elementType: "geometry.stroke",
                             stylers: [
-                                {saturation: 0},
-                                {lightness: 20}
+                                { saturation: 0 },
+                                { lightness: 20 }
                             ]
                         },
                         {
                             featureType: "transit",
                             elementType: "geometry",
                             stylers: [
-                                {hue: map_color},
-                                {saturation: 30},
-                                {lightness: -30}
+                                { hue: map_color },
+                                { saturation: 30 },
+                                { lightness: -30 }
                             ]
                         }
                     ];
                 }
 
-                styledMap = new google.maps.StyledMapType(styles, {name: "Lilac"});
+                styledMap = new google.maps.StyledMapType(styles, { name: "Lilac" });
 
                 mapOptions = {
                     center: myLatlng,
@@ -531,9 +531,10 @@ var Lilac;
 
                 $('body').append(twitterBox);
 
-                $("#twitter-box").css({display: 'none'});
+                $("#twitter-box").css({ display: 'none' });
 
-                try {$
+                try {
+                    $
                     $("#twitter-box").tweet({
                         username: $tis.twitter_username,
                         modpath: 'twitter/',
@@ -600,7 +601,7 @@ var Lilac;
 
             createPrettyPhoto: function () {
 
-                $("a[data-gal^='prettyPhoto']").prettyPhoto({theme: 'lilac', hook: 'data-gal'});
+                $("a[data-gal^='prettyPhoto']").prettyPhoto({ theme: 'lilac', hook: 'data-gal' });
             },
 
             createOwlSliders: function () {
@@ -649,7 +650,7 @@ var Lilac;
                     }
 
                     scrolling = true;
-                    $gallery.animate({scrollLeft: $gallery.scrollLeft() + 380}, function () {
+                    $gallery.animate({ scrollLeft: $gallery.scrollLeft() + 380 }, function () {
                         scrolling = false;
                     });
                 });
@@ -660,7 +661,7 @@ var Lilac;
                     }
 
                     scrolling = true;
-                    $gallery.animate({scrollLeft: $gallery.scrollLeft() - 380}, function () {
+                    $gallery.animate({ scrollLeft: $gallery.scrollLeft() - 380 }, function () {
                         scrolling = false;
                     });
                 });
@@ -669,33 +670,32 @@ var Lilac;
             curvedText: function () {
 
                 if ($(".curve").length) {
-                    $('.curve').arctext({radius: 1000});
+                    $('.curve').arctext({ radius: 1000 });
 
                     $(window).resize(function () {
-                        $('.curve').arctext('set', {radius: 1000});
+                        $('.curve').arctext('set', { radius: 1000 });
                     });
                 }
 
                 if ($(".curve2").length) {
-                    $('.curve2').arctext({radius: 800, dir: -1});
+                    $('.curve2').arctext({ radius: 800, dir: -1 });
 
                     $(window).resize(function () {
-                        $('.curve2').arctext('set', {radius: 800, dir: -1});
+                        $('.curve2').arctext('set', { radius: 800, dir: -1 });
                     });
                 }
             },
 
             countdown: function (parent, date) {
-
                 var $tis = this,
                     future = new Date(date),
                     counter,
                     $parent = $("" + parent);
 
                 $parent.html('<div class="days"><span>' + $tis.c_days + '</span><div></div></div>' +
-                        '<div class="hours"><span>' + $tis.c_hours + '</span><div></div></div>' +
-                        '<div class="minutes"><span>' + $tis.c_minutes + '</span><div></div></div>' +
-                        '<div class="seconds"><span>' + $tis.c_seconds + '</span><div></div></div>');
+                    '<div class="hours"><span>' + $tis.c_hours + '</span><div></div></div>' +
+                    '<div class="minutes"><span>' + $tis.c_minutes + '</span><div></div></div>' +
+                    '<div class="seconds"><span>' + $tis.c_seconds + '</span><div></div></div>');
 
                 function changeTime() {
                     var today = new Date(),
@@ -727,7 +727,7 @@ var Lilac;
                 if (!$.browser.mobile) {
                     $.stellar();
                 } else {
-                    $('.parallax').css({'background-position': '50% 50%', 'background-size': 'cover', 'background-attachment': 'scroll'});
+                    $('.parallax').css({ 'background-position': '50% 50%', 'background-size': 'cover', 'background-attachment': 'scroll' });
                 }
             },
 
@@ -778,7 +778,7 @@ var Lilac;
                 }).resize();
             },
 
-             contactForm: function () {
+            contactForm: function () {
 
                 var $tis = this;
 
@@ -796,9 +796,9 @@ var Lilac;
                         spinIcon = [];
 
                     $form.find('.required[value=""]').addClass('invalid');
-                    
+
                     var email = $form.find('[type="email"]');
-                    email.toggleClass('invalid', !re.test(email.val()) );
+                    email.toggleClass('invalid', !re.test(email.val()));
 
                     error = $form.find('.invalid').length > 0;
 
@@ -806,11 +806,11 @@ var Lilac;
                         data[this.name] = this.value;
                     });
 
-                    $form.find('.radio-lilac').each(function() {
+                    $form.find('.radio-lilac').each(function () {
                         var radio = $(this);
                         data[radio.data('value')] = radio.find('.active').text();
                     });
-                    
+
                     var params = [];
                     for (var key in data) {
                         params.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
@@ -867,7 +867,7 @@ var Lilac;
 
                         $submit_btn.removeClass('disabled');
                     };
-                    
+
                     if ($tis.sendingMail) return false;
 
                     if (!error) {
@@ -938,13 +938,13 @@ var Lilac;
                         slider = t.data("slider");
 
                     if (!t.hasClass("active")) {
-                        $(".bridesmaids-groomsmen-slider").addClass("hide").css({opacity: 0});
+                        $(".bridesmaids-groomsmen-slider").addClass("hide").css({ opacity: 0 });
 
                         if (first) {
                             first = false;
                             $("#" + slider).removeClass("hide");
                         } else {
-                            $("#" + slider).removeClass("hide").animate({opacity: 1}, 500);
+                            $("#" + slider).removeClass("hide").animate({ opacity: 1 }, 500);
                         }
                     }
 
@@ -983,9 +983,9 @@ var Lilac;
                     }
 
                     html = '<div class="input-group">' +
-                            '<input type="text" class="form-control" name="' + $t.data("input") + '_' + count + '" value="' + val + '" />' +
-                            '<span class="input-group-addon"><i class="fa fa-trash"></i></span>' +
-                            '</div>';
+                        '<input type="text" class="form-control" name="' + $t.data("input") + '_' + count + '" value="' + val + '" />' +
+                        '<span class="input-group-addon"><i class="fa fa-trash"></i></span>' +
+                        '</div>';
 
                     $("#" + $wrapper).data("count", count).append(html);
                     $input.val('');

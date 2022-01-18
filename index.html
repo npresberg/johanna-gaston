@@ -125,13 +125,16 @@
 									var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 									var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-									// Output the result in an element with id="demo"
-									document.getElementById("demo").innerHTML = "FALTAN " + days + " DÍAS ";
+									var demo = document.getElementById("demo")
+									if (demo) {
+										// Output the result in an element with id="demo"
+										demo.innerHTML = "FALTAN " + days + " DÍAS ";
 
-									// If the count down is over, write some text 
-									if (distance < 0) {
-										clearInterval(x);
-										document.getElementById("demo").innerHTML = "EXPIRED";
+										// If the count down is over, write some text 
+										if (distance < 0) {
+											clearInterval(x);
+											demo.innerHTML = "EXPIRED";
+										}
 									}
 								}, 1000);
 							</script>
@@ -531,7 +534,7 @@
 			 * Usage: Lilac.countdown("COUNTDOWN CONTAINER", "DATE");
 			 * You can change the countdowns labels in the file variables.js
 			 */
-			Lilac.countdown(".countdown", "2015/12/06 12:00 PM");
+			// Lilac.countdown(".countdown", "2015/12/06 12:00 PM");
 		});
 	</script>
 
